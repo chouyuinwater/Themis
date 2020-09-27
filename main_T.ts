@@ -41,13 +41,19 @@ class Member {
     }
 }
 
-const checkMember = ({id, info}: {id: number, info: Member }) => {
-    console.log('id = ' + id);
+const checkMember = ({system, info}: {system: {person: { [key: string]: number } }, info: Member }) => {
+    console.log('id = ' + system.person.id);
     console.log('info = ' + info.name);
 };
 
+let system = {
+    person: {
+        id: 1000
+    }
+}
+
 let param = {
-    id: 100,
+    system: system,
     info: new Member('bingbing', 10, false)
 }
 checkMember(param);
