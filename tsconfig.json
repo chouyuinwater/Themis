@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
+    // "module": "commonjs", 添加后产生多余的问题 export
+    // "target": "es5", 添加后产生多余的问题 export
+    "target": "es2015",
     "sourceMap": true
   },
   "exclude": [
