@@ -63,3 +63,35 @@ let Add_3: (first: number, second: number) => number = function (x: number, y: n
     console.log(add(x, y));
     return x + y;
 }
+
+// =========== 结构赋值 ============
+let createOrder = (order : {id : number, price : number}) => {
+    console.log("id = " + order.id + " price = " + order.price);
+}
+let order = {name: "xiaoming", id: 1, price: 1.2};
+createOrder({...order});
+
+let updateOrder = (...order : String[]) => {
+    console.log("id = " + order[1] + " price = " + order[2]);
+}
+let orderUpdate : any[] = [1, 1.2, 3, "asd"]
+updateOrder(...orderUpdate);
+
+// =========== 泛型 ================
+let say = "hello world!";
+let saySize = (<string>say).length;
+let stringSize = <T extends string>(str : T) => {
+    console.log("size = " + str.length);
+}
+let sayWhat = <T>(str : T) => {
+    console.log("I say: " + str);
+}
+stringSize<string>(say);
+sayWhat<string>(say);
+sayWhat<string>("1");
+
+// ============ 枚举 ===============
+enum color {RED = 1, GREEN = 4, YELLOW}
+let red = color.RED;
+let red_n = 1;
+console.log("enum result = " + (red === red_n))
