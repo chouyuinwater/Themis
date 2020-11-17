@@ -118,7 +118,13 @@ function func_7_4() {
 // 上面代码中，转换后的 ES5 版本清楚地说明了，箭头函数里面根本没有自己的this，而是引用外层的this。
 // =====================================================================================
 
-
+// 函数自执行？？ 函数后面加一组()就是执行
+// ==================
+let auto = function automatic(str) {
+    console.log('str ====' + str);
+    return str;
+}('aaaaa');
+console.log('auto ====' + auto);
 
 // 执行 execute
 const person_new = func_1();
@@ -130,3 +136,4 @@ func_6(person_new)
 func_7_1(person_new)
 console.log(func_7_2(person_new))
 func_7_3.call({id: 13})
+
